@@ -5,20 +5,28 @@ on:
     branches:
       - master
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  build:
+  build-and-publish:
     runs-on: ubuntu-latest
 
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
+
       - name: Install dependencies
         run: npm install
+
       - name: Run tests
         run: npm run test
 
-      - id: build-publish
+      - name: Build and deploy Storybook
         uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
-          path: StoryBookBuild
+          path: storybook-static
+          checkout: false
 
