@@ -1,4 +1,4 @@
-name: CI/CD
+name: Publish status
 
 on:
   push:
@@ -21,6 +21,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Types checking
+        run: npm run type-check
+
       - name: Run tests
         run: npm run test
 
@@ -29,4 +32,7 @@ jobs:
         with:
           path: storybook-static
           checkout: false
+
+      - name: Build npm package
+        run: npm run build
 
