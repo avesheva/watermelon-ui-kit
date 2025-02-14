@@ -7,19 +7,22 @@ export default defineConfig({
   plugins: [
     vue(),
     dts({
+      tsconfigPath: "tsconfig.lib.json",
       insertTypesEntry: true,
     }),
   ],
-  lib: {
-    entry: resolve(__dirname, 'src/components/index.ts'),
-    name: 'watermelon-ui-kit',
-    fileName: (format) => `watermelon-ui-kit.${ format }.ts`,
-  },
-  rollupOptions: {
-    external: ['vue'],
-    output: {
-      globals: {
-        vue: 'Vue',
+  build: {
+    lib: {
+      entry: resolve(__dirname, 'src/components/index.ts'),
+      name: 'watermelon-ui-kit',
+      fileName: (format) => `watermelon-ui-kit.${ format }.ts`,
+    },
+    rollupOptions: {
+      external: ['vue'],
+      output: {
+        globals: {
+          vue: 'Vue',
+        },
       },
     },
   },

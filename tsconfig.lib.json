@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "ESNext",
+    "module": "ESNext",
+    "declaration":  true,
+    "declarationMap": true,
+    "emitDeclarationOnly": false,
+    "sourceMap": false,
+    "skipLibCheck": true,
+    "moduleResolution": "Node",
+    "lib": ["ESNext", "DOM"]
+  },
+  "include": ["src/components"],
+  "exclude": ["src/components/**/*.test.ts", "src/components/**/*.stories.ts"],
+}
