@@ -14,7 +14,13 @@ type Story = StoryObj<typeof meta>
  * Tag description here ...
  */
 
-export const Primary: Story = {
+export const Regular: Story = {
+  args: {
+    primary: true,
+    label: 'Tag',
+  },
+}
+export const Draft: Story = {
   args: {
     primary: true,
     label: 'Tag',
