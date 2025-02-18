@@ -26,7 +26,9 @@ export default defineConfig({
       },
     },
   },
-  // test: {
-  //
-  // },
+  test: {
+    coverage: {
+      "include": ["src/components"],
+    },
+  },
 })
