@@ -33,6 +33,12 @@ jobs:
           path: storybook-static
           checkout: false
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          registry-url: 'https://registry.npmjs.org'
+
       - name: Build npm package
         run: npm run build
 
