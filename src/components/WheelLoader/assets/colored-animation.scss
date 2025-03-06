@@ -1,0 +1,96 @@
+$color-1: #620D2A;
+$color-2: #A51546;
+$color-3: #ED2573;
+$color-4: #F658A2;
+$color-5: #D17DD0;
+$color-6: #DD5BC2;
+$color-7: #F350BB;
+$color-8: 'transparent';
+
+@keyframes colorchange-1 {
+  0% { background: $color-2; }
+  14% { background: $color-3; }
+  28% { background: $color-4; }
+  42% { background: $color-5; }
+  56% { background: $color-6; }
+  70% { background: $color-7; }
+  84% { background: $color-8; }
+  100% { background: $color-1; }
+}
+
+@keyframes colorchange-2 {
+  0% { background: $color-3; }
+  14% { background: $color-4; }
+  28% { background: $color-5; }
+  42% { background: $color-6; }
+  56% { background: $color-7; }
+  70% { background: $color-8; }
+  84% { background: $color-1; }
+  100% { background: $color-2; }
+}
+
+@keyframes colorchange-3 {
+  0% { background: $color-4; }
+  14% { background: $color-5; }
+  28% { background: $color-6; }
+  42% { background: $color-7; }
+  56% { background: $color-8; }
+  70% { background: $color-1; }
+  84% { background: $color-2; }
+  100% { background: $color-3; }
+}
+
+@keyframes colorchange-4 {
+  0% { background: $color-5; }
+  14% { background: $color-6; }
+  28% { background: $color-7; }
+  42% { background: $color-8; }
+  56% { background: $color-1; }
+  70% { background: $color-2; }
+  84% { background: $color-3; }
+  100% { background: $color-4; }
+}
+
+@keyframes colorchange-5 {
+  0% { background: $color-6; }
+  14% { background: $color-7; }
+  28% { background: $color-8; }
+  42% { background: $color-1; }
+  56% { background: $color-2; }
+  70% { background: $color-3; }
+  84% { background: $color-4; }
+  100% { background: $color-5;}
+}
+
+@keyframes colorchange-6 {
+  0% { background: $color-7; }
+  14% { background: $color-8;}
+  28% { background: $color-1; }
+  42% { background: $color-2; }
+  56% { background: $color-3; }
+  70% { background: $color-4; }
+  84% { background: $color-5; }
+  100% { background: $color-6; }
+}
+
+@keyframes colorchange-7 {
+  0% { background: $color-8; }
+  14% { background: $color-1; }
+  28% { background: $color-2; }
+  42% { background: $color-3; }
+  56% { background: $color-4; }
+  70% {nbackground: $color-5; }
+  84% { background: $color-6; }
+  100% { background: $color-7; }
+}
+
+@keyframes colorchange-8 {
+  0% { background: $color-1; }
+  14% { background: $color-2; }
+  28% { background: $color-3; }
+  42% { background: $color-4; }
+  56% { background: $color-5; }
+  70% { background: $color-6; }
+  84% { background: $color-7; }
+  100% { background: $color-8; }
+}

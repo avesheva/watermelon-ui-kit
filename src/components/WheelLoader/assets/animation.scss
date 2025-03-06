@@ -1,0 +1,88 @@
+@keyframes colorchange-1 {
+    0% { opacity: 1; }
+    14% { opacity: .86; }
+    28% { opacity: .72; }
+    42% { opacity: .58; }
+    56% { opacity: .44; }
+    70% { opacity: .30; }
+    84% { opacity: .15; }
+    100% { opacity: 0; }
+}
+
+@keyframes colorchange-2 {
+    0% { opacity: .86; }
+    14% { opacity: .72; }
+    28% { opacity: .58; }
+    42% { opacity: .44; }
+    56% { opacity: .30; }
+    70% { opacity: .15; }
+    84% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes colorchange-3 {
+    0% { opacity: .72; }
+    14% { opacity: .58; }
+    28% { opacity: .44; }
+    42% { opacity: .30; }
+    56% { opacity: .15; }
+    70% { opacity: 0; }
+    84% { opacity: 1; }
+    100% { opacity: .86; }
+}
+
+@keyframes colorchange-4 {
+    0% { opacity: .58; }
+    14% { opacity: .44; }
+    28% { opacity: .30; }
+    42% { opacity: .15; }
+    56% { opacity: 0; }
+    70% { opacity: 1; }
+    84% { opacity: .86; }
+    100% { opacity: .72; }
+}
+
+@keyframes colorchange-5 {
+    0% { opacity: .44; }
+    14% { opacity: .30; }
+    28% { opacity: .15; }
+    42% { opacity: 0; }
+    56% { opacity: 1; }
+    70% { opacity: .86; }
+    84% { opacity: .72; }
+    100% { opacity: .58; }
+}
+
+@keyframes colorchange-6 {
+    0% { opacity: .30; }
+    14% { opacity: .15; }
+    28% { opacity: 0; }
+    42% { opacity: 1; }
+    56% { opacity: .86; }
+    70% { opacity: .72; }
+    84% { opacity: .58; }
+    100% { opacity: .44; }
+}
+
+@keyframes colorchange-7 {
+    0% { opacity: .15; }
+    14% { opacity: 0; }
+    28% { opacity: 1; }
+    42% { opacity: .86; }
+    56% { opacity: .72; }
+    70% { opacity: .58; }
+    84% { opacity: .44; }
+    100% { opacity: .30; }
+}
+
+@keyframes colorchange-8 {
+    0% { opacity: 0; }
+    14% { opacity: 1; }
+    28% { opacity: .86; }
+    42% { opacity: .72; }
+    56% { opacity: .58; }
+    70% { opacity: .44; }
+    84% { opacity: .30; }
+    100% { opacity: .15; }
+}
+

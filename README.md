@@ -2,11 +2,16 @@
 
 ![Package publish status](https://github.com/avesheva/watermelon-ui-kit/actions/workflows/deploy.yml/badge.svg)
 
-UI library for **Watermelon** :watermelon: project. Library documentation [here](https://avesheva.github.io/watermelon-ui-kit).
+Vue 3 TypeScript UI library for **Watermelon** :watermelon: project. Library documentation [here](https://avesheva.github.io/watermelon-ui-kit).
 
-## Stack
-- Vue 3
-- Typescript
-- Vitest
+## Installation
+```shell
+# with npm
+npm install watermelon-ui-kit
+```
+```shell
+# with yarn
+yarn add watermelon-ui-kit
+```
 
 
