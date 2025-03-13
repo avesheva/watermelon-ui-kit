@@ -32,24 +32,52 @@ const meta = {
   title: 'Common/Tag',
   component: Tag,
   tags: ['autodocs'],
+  args: {
+    tag: {
+      id: 1,
+      name: 'Learning',
+      status: 2,
+      rate: 0.24,
+    },
+    closable: true,
+  },
 } satisfies Meta<typeof Tag>
 
 export default meta;
 type Story = StoryObj<typeof meta>
 
 /**
- * ##### Default state
  * Can be used like hashtags - just inform user what about quiz
  */
-export const Regular: Story = {
+export const Default: Story = {
   args: {
-    primary: true,
-    label: 'Tag',
+    closable: false,
   },
 }
-export const Draft: Story = {
+/**
+ * The only one way to create new tag - is to add it to the new quiz. The new created tag will be in the "Draft" status,
+ * till quiz publish. When quiz is published, and available for other users - all new created tags, attached to it,
+ * also becomes published and available for all users.
+  */
+export const DraftTag: Story = {
   args: {
-    primary: true,
-    label: 'Tag',
+    tag: {
+      name: 'Learning',
+      status: 3,
+    }
+  },
+}
+/**
+ * Shows user rate on this tag
+ */
+export const WithRate: Story = {
+  args: {
+    tag: {
+      name: 'Learning',
+      status: 2,
+      rate: 0.24,
+    },
+    showRate: true,
+    closable: false,
   },
 }
