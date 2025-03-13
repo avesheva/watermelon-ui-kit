@@ -9,7 +9,7 @@ const TAG_STATUS = {
 export type TagType = {
   tagId: string,
   name: string,
-  status: typeof TAG_STATUS,
+  status: 1 | 2 | 3,
   rate: number,
 }
 
