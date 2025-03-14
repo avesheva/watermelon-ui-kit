@@ -1,6 +1,6 @@
 {
   "name": "watermelon-ui-kit",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "type": "module",
   "main": "./dist/watermelon-ui-kit.umd.ts",
   "module": "./dist/watermelon-ui-kit.es.ts",
@@ -13,7 +13,7 @@
       "import": "./dist/watermelon-ui-kit.es.ts",
       "require": "./dist/watermelon-ui-kit.umd.ts"
     },
-    "./styles": "./dist/style.css"
+    "./styles": "./dist/watermelon-ui-kit.css"
   },
   "scripts": {
     "dev": "vite",
