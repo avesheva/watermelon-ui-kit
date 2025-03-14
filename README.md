@@ -14,4 +14,10 @@ npm install watermelon-ui-kit
 yarn add watermelon-ui-kit
 ```
 
+### Connecting styles file
+Add the following import to main file of your application
+```javascript
+import 'watermelon-ui-kit/styles'
+```
+
 

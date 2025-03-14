@@ -1,6 +1,6 @@
 {
   "name": "watermelon-ui-kit",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "type": "module",
   "main": "./dist/watermelon-ui-kit.umd.ts",
   "module": "./dist/watermelon-ui-kit.es.ts",
