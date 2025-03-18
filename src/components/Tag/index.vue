@@ -34,7 +34,11 @@ const isNew = props.tag.status === TAG_STATUS.NEW
     :class="isNew ? 'text-primary-green border border-solid' : 'bg-primary-green text-white'"
   >
     <span v-if="isNew" class="mr-1 text-sm">{{ tag.name }}</span>
-    <router-link v-else :to="`/dashboard/tags/${ tag.name }`" class="mr-1 text-sm hover:underline">
+    <router-link
+      v-else
+      :to="`/dashboard/tags/${ tag.name }`"
+      class="mr-1 text-sm text-white no-underline hover:underline"
+    >
       <span>{{ tag.name }}</span>
     </router-link>
 
