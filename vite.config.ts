@@ -38,5 +38,6 @@ export default defineConfig({
     coverage: {
       "include": ["src/components/**/*.vue"],
     },
+    environment: "jsdom",
   },
 })
