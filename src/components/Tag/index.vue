@@ -1,10 +1,5 @@
 <script setup lang="ts">
-
-const TAG_STATUS = {
-  SYSTEM: 1,
-  PUBLISHED: 2,
-  NEW: 3,
-}
+import { TAG_STATUS } from './constants'
 
 export type TagType = {
   tagId: string,
@@ -18,12 +13,12 @@ export type TagPropsType = {
   closable?: boolean,
   showRate?: boolean,
 }
+export type TagEventsType = {
+  (e: 'close', tag: TagType): void,
+}
 
 const props = defineProps<TagPropsType>()
-
-defineEmits<{
-  close: () => void,
-}>()
+defineEmits<TagEventsType>()
 
 const isNew = props.tag.status === TAG_STATUS.NEW
 </script>
@@ -47,8 +42,8 @@ const isNew = props.tag.status === TAG_STATUS.NEW
     <svg
       v-if="closable"
       width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"
-      class="inline-block cursor-pointer"
-      @click="$emit('close')"
+      class="close inline-block cursor-pointer"
+      @click="$emit('close', tag)"
     >
       <path
         d="M8.49999 7.66407L5.07851 4.24259C4.96961 4.1337 4.82192 4.07252 4.66793 4.07252C4.51393 4.07252 4.36624
