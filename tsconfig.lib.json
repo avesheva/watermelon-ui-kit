@@ -10,7 +10,11 @@
     "sourceMap": false,
     "skipLibCheck": true,
     "moduleResolution": "Node",
-    "lib": ["ESNext", "DOM"]
+    "lib": ["ESNext", "DOM"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+    }
   },
   "include": ["src/components"],
   "exclude": ["src/components/**/*.test.ts", "src/components/**/*.stories.ts"],
