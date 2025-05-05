@@ -4,11 +4,11 @@ import { resolve } from 'path'
 import dts from 'vite-plugin-dts'
 import tailwindcss from '@tailwindcss/vite'
 
-export default defineConfig({
+export default defineConfig(() => ({
   plugins: [
     vue(),
     dts({
-      tsconfigPath: "tsconfig.lib.json",
+      tsconfigPath: 'tsconfig.lib.json',
       insertTypesEntry: true,
     }),
     tailwindcss(),
@@ -36,8 +36,8 @@ export default defineConfig({
   },
   test: {
     coverage: {
-      "include": ["src/components/**/*.vue"],
+      'include': ['src/components/**/*.vue'],
     },
-    environment: "jsdom",
+    environment: 'jsdom',
   },
-})
+}))
