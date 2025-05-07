@@ -1,18 +1,22 @@
 <script setup lang="ts">
 import { ICON_TYPES } from '@/constants/icons'
 
+export type iconType = typeof ICON_TYPES.CHECK_CIRCLE | typeof ICON_TYPES.CHECK_SQUARE
+  | typeof ICON_TYPES.LEFT_RIGHT_ARROW | typeof ICON_TYPES.CHESS
+
 export type SvgIconPropsType = {
-  icon: typeof ICON_TYPES.ONE_OF | typeof ICON_TYPES.MULTIPLE_VARIANTS | typeof ICON_TYPES.DRAGGABLE_ORDER
-    | typeof ICON_TYPES.CHESS,
+  icon: iconType,
   width?: number,
   height?: number,
   opacity?: number,
+  color?: string,
 }
 
 withDefaults(defineProps<SvgIconPropsType>(), {
   width: 16,
   height: 16,
   opacity: 0.7,
+  color: 'white',
 })
 </script>
 
@@ -42,10 +46,10 @@ withDefaults(defineProps<SvgIconPropsType>(), {
        5.17954 7.43399 4.66667 6.87382 4.66667C6.3137 4.66667 5.73113 5.17956 5.70785 6.07279C5.70739 6.09006 5.70715
        6.1075 5.70715 6.125C5.70715 6.35057 5.79098 6.7473 5.95408 7.2695C6.1114 7.77321 6.32362 8.33624 6.53939
        8.86812C6.65344 9.14923 6.76759 9.41955 6.87382 9.66508Z"
-      fill="white"
+      :fill="color"
     />
     <path
-      v-if="icon === ICON_TYPES.DRAGGABLE_ORDER"
+      v-if="icon === ICON_TYPES.LEFT_RIGHT_ARROW"
       :opacity="opacity"
       d="M14 10.6073C14 10.9776 13.6929 11.2847 13.3226 11.2847H2.31226L3.41419 12.3866C3.67613 12.6486 3.67613 13.0821
       3.41419 13.3441C3.27871 13.4795 3.1071 13.5428 2.93548 13.5428C2.76387 13.5428 2.59226 13.4795 2.45677
@@ -58,9 +62,9 @@ withDefaults(defineProps<SvgIconPropsType>(), {
       3.04728 13.8645 2.97502 13.8013 2.91179L11.5432 0.653727C11.2813 0.391792 10.8477 0.391792 10.5858
       0.653727C10.3239 0.915662 10.3239 1.34921 10.5858 1.61115L11.6877 2.71308H0.677419C0.307097 2.71308 5.04717e-08
       3.02018 5.04717e-08 3.3905C5.04717e-08 3.76082 0.307097 4.06792 0.677419 4.06792V4.05889Z"
-      fill="white"
+      :fill="color"
     />
-    <g v-if="icon === ICON_TYPES.MULTIPLE_VARIANTS" :opacity="opacity">
+    <g v-if="icon === ICON_TYPES.CHECK_SQUARE" :opacity="opacity">
       <path
         d="M11.8 13.8056H2.2C1.61652 13.8056 1.05694 13.5802 0.644365 13.1791C0.231785 12.778 0 12.2339 0
         11.6667V2.33335C0 1.76608 0.231785 1.22204 0.644365 0.820924C1.05694 0.419804 1.61652 0.194458 2.2
@@ -72,7 +76,7 @@ withDefaults(defineProps<SvgIconPropsType>(), {
         12.9757 5.25753C13.0883 5.14814 13.2409 5.08668 13.4 5.08668C13.5591 5.08668 13.7117 5.14814 13.8243
         5.25753C13.9368 5.36693 14 5.5153 14 5.67001V11.6667C14 12.2339 13.7682 12.778 13.3556 13.1791C12.9431 13.5802
         12.3835 13.8056 11.8 13.8056Z"
-        fill="white"
+        :fill="color"
       />
       <path
         d="M5.79998 9.52783C5.64562 9.51636 5.50203 9.44655 5.39998 9.33339L2.99998 7.00005C2.94651 6.8912 2.92906
@@ -81,10 +85,10 @@ withDefaults(defineProps<SvgIconPropsType>(), {
         1.48666 12.96 1.50706C13.0823 1.52746 13.1951 1.58421 13.2828 1.66951C13.3706 1.75481 13.4289 1.86446 13.4499
         1.98335C13.4709 2.10224 13.4535 2.22453 13.4 2.33339L6.19998 9.33339C6.09792 9.44655 5.95433 9.51636 5.79998
         9.52783Z"
-        fill="white"
+        :fill="color"
       />
     </g>
-    <g v-if="icon === ICON_TYPES.ONE_OF" :opacity="opacity">
+    <g v-if="icon === ICON_TYPES.CHECK_CIRCLE" :opacity="opacity">
       <path
         d="M5.81259 9.52305C5.66283 9.5116 5.52351 9.44194 5.42448 9.329L3.09584 7.00035C3.04396 6.89172 3.02703
         6.76967 3.04739 6.65102C3.06774 6.53236 3.12439 6.42294 3.20951 6.33781C3.29464 6.25268 3.40406 6.19604 3.52272
@@ -92,7 +96,7 @@ withDefaults(defineProps<SvgIconPropsType>(), {
         12.6411 1.49804 12.7598 1.51839C12.8784 1.53875 12.9878 1.59539 13.073 1.68052C13.1581 1.76565 13.2147 1.87507
         13.2351 1.99373C13.2554 2.11238 13.2385 2.23443 13.1866 2.34306L6.2007 9.329C6.10168 9.44194 5.96236 9.5116
         5.81259 9.52305Z"
-        fill="white"
+        :fill="color"
       />
       <path
         d="M6.97692 13.9863C5.72836 13.9843 4.50314 13.6477 3.42878 13.0116C2.35443 12.3754 1.4702 11.4629 0.868111
@@ -114,7 +118,7 @@ withDefaults(defineProps<SvgIconPropsType>(), {
         6.12074 13.9552 6.19847 13.9629 6.27849C14.1042 7.64382 13.8402 9.02055 13.2038 10.2367C12.5674 11.4529 11.5868
         12.4547 10.3845 13.1169C9.5608 13.5933 8.64543 13.8896 7.6988 13.9863C7.45818 13.9863 7.20979 13.9863 6.97692
         13.9863Z"
-        fill="white"
+        :fill="color"
       />
     </g>
   </svg>
