@@ -5,7 +5,7 @@ export type TagType = {
   tagId: string,
   name: string,
   status: 1 | 2 | 3,
-  rate: number,
+  rate?: number,
 }
 
 export type TagPropsType = {
