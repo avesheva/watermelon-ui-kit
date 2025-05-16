@@ -1,0 +1,6 @@
+export const QUESTION_TYPES = {
+  ONE_OF: 1,
+  MULTIPLE_VARIANTS: 2,
+  DRAGGABLE_ORDER: 3,
+  CHESS: 4,
+}
