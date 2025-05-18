@@ -4,3 +4,10 @@ export const QUESTION_TYPES = {
   DRAGGABLE_ORDER: 3,
   CHESS: 4,
 }
+
+export const QUESTION_TYPES_LABELS = {
+  [QUESTION_TYPES.ONE_OF]: 'One Of',
+  [QUESTION_TYPES.MULTIPLE_VARIANTS]: 'Multiple Variants',
+  [QUESTION_TYPES.DRAGGABLE_ORDER]: 'Draggable Order',
+  [QUESTION_TYPES.CHESS]: 'Chess',
+}

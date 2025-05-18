@@ -3,7 +3,7 @@ import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import Index from '@/components/SvgIcon/index.vue'
 // Constants
 import { ICON_TYPES } from '@/constants/icons'
-import { QUESTION_TYPES } from '@/constants'
+import { QUESTION_TYPES, QUESTION_TYPES_LABELS } from '@/constants'
 
 export type OptionType = {
   value: number,
@@ -22,22 +22,22 @@ const emit = defineEmits<{
 const options: OptionType[] = [
   {
     value: QUESTION_TYPES.ONE_OF,
-    label: 'One Of',
+    label: QUESTION_TYPES_LABELS[QUESTION_TYPES.ONE_OF],
     icon: ICON_TYPES.CHECK_CIRCLE,
   },
   {
     value: QUESTION_TYPES.MULTIPLE_VARIANTS,
-    label: 'Multiple Variants',
+    label: QUESTION_TYPES_LABELS[QUESTION_TYPES.MULTIPLE_VARIANTS],
     icon: ICON_TYPES.CHECK_SQUARE,
   },
   {
     value: QUESTION_TYPES.DRAGGABLE_ORDER,
-    label: 'Draggable Order',
+    label: QUESTION_TYPES_LABELS[QUESTION_TYPES.DRAGGABLE_ORDER],
     icon: ICON_TYPES.LEFT_RIGHT_ARROW,
   },
   {
     value: QUESTION_TYPES.CHESS,
-    label: 'Chess',
+    label: QUESTION_TYPES_LABELS[QUESTION_TYPES.CHESS],
     icon: ICON_TYPES.CHESS,
   },
 ]
