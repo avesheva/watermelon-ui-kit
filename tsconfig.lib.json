@@ -6,7 +6,7 @@
     "module": "ESNext",
     "declaration":  true,
     "declarationMap": true,
-    "emitDeclarationOnly": false,
+    "emitDeclarationOnly": true,
     "sourceMap": false,
     "skipLibCheck": true,
     "moduleResolution": "Node",
