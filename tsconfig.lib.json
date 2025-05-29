@@ -5,12 +5,9 @@
     "target": "ESNext",
     "module": "ESNext",
     "declaration":  true,
-    "declarationMap": true,
     "emitDeclarationOnly": true,
-    "sourceMap": false,
     "skipLibCheck": true,
     "moduleResolution": "Node",
-    "lib": ["ESNext", "DOM"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],

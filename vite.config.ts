@@ -10,6 +10,7 @@ export default defineConfig(() => ({
     dts({
       tsconfigPath: 'tsconfig.lib.json',
       insertTypesEntry: true,
+      outDir: 'dist',
     }),
     tailwindcss(),
   ],
@@ -23,7 +24,7 @@ export default defineConfig(() => ({
     lib: {
       entry: resolve(__dirname, 'src/components/index.ts'),
       name: 'watermelon-ui-kit',
-      fileName: (format) => `watermelon-ui-kit.${ format }.ts`,
+      fileName: (format) => `watermelon-ui-kit.${ format }.js`,
     },
     rollupOptions: {
       external: ['vue'],

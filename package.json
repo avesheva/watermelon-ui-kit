@@ -1,10 +1,10 @@
 {
   "name": "watermelon-ui-kit",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "type": "module",
-  "main": "./dist/watermelon-ui-kit.umd.ts",
-  "module": "./dist/watermelon-ui-kit.es.ts",
-  "types": "./dist/components/index.d.ts",
+  "main": "./dist/watermelon-ui-kit.umd.js",
+  "module": "./dist/watermelon-ui-kit.es.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
