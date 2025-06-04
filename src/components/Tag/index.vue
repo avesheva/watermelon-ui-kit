@@ -1,12 +1,6 @@
 <script setup lang="ts">
 import { TAG_STATUS } from './constants'
-
-export type TagType = {
-  tagId: string,
-  name: string,
-  status: 1 | 2 | 3,
-  rate?: number,
-}
+import type { TagType } from './types.ts'
 
 export type TagPropsType = {
   tag: TagType,
