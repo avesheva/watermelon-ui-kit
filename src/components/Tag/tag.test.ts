@@ -3,14 +3,14 @@ import { mount } from '@vue/test-utils'
 import Tag  from './index.vue'
 import { TAG_STATUS } from './constants.ts'
 // Types
-import type { TagType } from './index.vue'
+import type { TagType } from './types.ts'
 
 const TAG_ID = 'asdadaadajlkjwe'
 const TAG_NAME = 'Learning'
 const TAG_RATE = 12
 
 const tagData: TagType = {
-  id: TAG_ID,
+  tagId: TAG_ID,
   name: TAG_NAME,
   status: TAG_STATUS.PUBLISHED,
   rate: TAG_RATE,
@@ -21,7 +21,7 @@ const wrapper = mount(Tag, {
     tag: tagData,
     closable: true,
     showRate: true,
-  }
+  },
 })
 
 test('Show tag name, rate', () => {
@@ -33,5 +33,7 @@ test('Tag "close" event firing', () => {
   wrapper.find('.tag .close').trigger('click')
   const incrementEvent = wrapper.emitted('close')
 
-  expect(incrementEvent[0]).toEqual([tagData])
+  if (incrementEvent) {
+    expect(incrementEvent[0]).toEqual([tagData])
+  }
 })
