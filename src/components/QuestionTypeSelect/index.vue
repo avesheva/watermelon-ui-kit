@@ -96,7 +96,7 @@ onBeforeUnmount(() => {
       ref="question-type-select"
       class="
         dropdown absolute left-0 bg-primary-blue bg-opacity-10 cursor-pointer text-white text-base text-opacity-90
-        rounded-lg p-0 overflow-hidden m-0
+        rounded-lg p-0 overflow-hidden m-0 z-1
       "
     >
       <li
