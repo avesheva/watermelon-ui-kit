@@ -9,6 +9,7 @@
   --color-primary-green: #01ABAA;
   --color-primary-yellow: #FEDC3D;
   --color-primary-blue: #001529;
+  --color-primary-blue-75: rgba(0, 21, 41, 0.75);
 }
 
 .font-poppins {
@@ -17,3 +18,16 @@
 .font-rubik {
   font-family: Rubik;
 }
+
+/* Fade animation */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+/*****/
+
