@@ -9,15 +9,16 @@ export type ConfirmPopupProps = {
   position?: 'left' | 'right',
   iconClass?: string,
 }
+export type ConfirmPopupEmits = {
+  (e: 'confirm'): void,
+  (e: 'decline'): void,
+}
 
 const props = withDefaults(defineProps<ConfirmPopupProps>(), {
   position: 'right',
   opened: false,
 })
-defineEmits<{
-  (e: 'confirm'): void,
-  (e: 'decline'): void,
-}>()
+defineEmits<ConfirmPopupEmits>()
 
 onMounted(() => {
   const element = document.querySelector(props.target) as HTMLElement
