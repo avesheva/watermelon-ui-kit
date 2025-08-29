@@ -6,6 +6,7 @@ export type TagPropsType = {
   tag: TagType,
   closable?: boolean,
   showRate?: boolean,
+  small?: boolean,
 }
 export type TagEventsType = {
   (e: 'close', tag: TagType): void,
@@ -15,23 +16,37 @@ const props = defineProps<TagPropsType>()
 defineEmits<TagEventsType>()
 
 const isNew = props.tag.status === TAG_STATUS.NEW
+let classes = isNew ? 'text-primary-green border border-solid' : 'bg-primary-green text-white'
+
+if (props.small) {
+  classes = classes + ' small'
+} else {
+  classes = classes + ' px-2 py-1'
+}
 </script>
 
 <template>
   <div
-    class="tag flex w-fit items-center font-rubik px-2 py-1 rounded-xs"
-    :class="isNew ? 'text-primary-green border border-solid' : 'bg-primary-green text-white'"
+    class="tag flex w-fit h-fit items-center font-rubik rounded-sm"
+    :class="classes"
   >
     <span v-if="isNew" class="mr-1 text-sm">{{ tag.name }}</span>
     <router-link
       v-else
       :to="`/dashboard/tags/${ tag.name }`"
-      class="mr-1 text-sm text-white no-underline hover:underline"
+      class="mr-1 text-white no-underline hover:underline"
+      :class="{ 'text-sm': !small }"
     >
       <span>{{ tag.name }}</span>
     </router-link>
 
-    <span v-if="showRate && !isNew" class="rate px-2 py-1 rounded-xl text-xs font-medium">{{ tag.rate }}</span>
+    <span
+      v-if="showRate && !isNew"
+      class="rate rounded-xl font-medium"
+      :class="{ 'px-2 py-1 text-xs': !small }"
+    >
+      {{ tag.rate }}
+    </span>
 
     <svg
       v-if="closable"
@@ -59,6 +74,16 @@ const isNew = props.tag.status === TAG_STATUS.NEW
 .tag {
   .rate {
     background: rgba(5,21,38, 0.3);
+  }
+
+  &.small {
+    padding: 0.1rem;
+    font-size: 0.8rem;
+
+    .rate {
+      padding: 0.2rem;
+      font-size: 0.7rem;
+    }
   }
 }
 </style>
