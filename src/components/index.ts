@@ -5,6 +5,7 @@ import WheelLoader from './WheelLoader/index.vue'
 import SvgIcon from './SvgIcon/index.vue'
 import QuestionTypeSelect from './QuestionTypeSelect/index.vue'
 import ConfirmationPopup from './ConfirmationPopup/index.vue'
+import MobileBottomSheet from './MobileBottomSheet/index.vue'
 
 import type { TagType } from './Tag/types.ts'
 
@@ -14,6 +15,7 @@ export {
   SvgIcon,
   QuestionTypeSelect,
   ConfirmationPopup,
+  MobileBottomSheet,
 }
 
 export type {
