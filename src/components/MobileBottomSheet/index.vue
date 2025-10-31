@@ -32,7 +32,7 @@ watch(() => props.modelValue, (value) => {
   <transition name="fade">
     <div
       v-if="modelValue"
-      class="overlay overlow-hidden"
+      class="overlay overflow-hidden"
       @click.self="$emit('update:modelValue', false)"
     >
       <div ref="sheet" class="sheet w-full rounded-t-3xl bg-white">
