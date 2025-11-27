@@ -6,6 +6,7 @@ import SvgIcon from './SvgIcon/index.vue'
 import QuestionTypeSelect from './QuestionTypeSelect/index.vue'
 import ConfirmationPopup from './ConfirmationPopup/index.vue'
 import MobileBottomSheet from './MobileBottomSheet/index.vue'
+import MobileSwiper from './MobileSwiper/index.vue'
 
 import type { TagType } from './Tag/types.ts'
 
@@ -16,6 +17,7 @@ export {
   QuestionTypeSelect,
   ConfirmationPopup,
   MobileBottomSheet,
+  MobileSwiper,
 }
 
 export type {
