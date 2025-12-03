@@ -1,5 +1,5 @@
 import WheelLoader from './index.vue'
-import type { Meta, StoryObj } from '@storybook/vue3'
+import type { Meta, StoryObj } from '@storybook/vue3-vite'
 
 type Story = StoryObj<typeof meta>
 

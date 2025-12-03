@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
+import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import QuestionTypeSelect from './index.vue'
 // Constants
 import { QUESTION_TYPES } from '@/constants'
