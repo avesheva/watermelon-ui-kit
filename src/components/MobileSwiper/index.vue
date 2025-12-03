@@ -15,6 +15,10 @@ const emit = defineEmits<{
   (e: 'long-press', index: number): void,
 }>()
 
+const slots = defineSlots<{
+  default?: () => any[],
+}>()
+
 const LONG_PRESS_TIME_LIMIT = 600
 
 const startX = ref(0)
@@ -79,7 +83,7 @@ onUnmounted(() => {
 <template>
   <div ref="swiperBlock" class="swipe-list overflow-x-hidden">
     <div
-      v-for="(child, index) in ($slots.default?.()[0]?.children ?? [])"
+      v-for="(child, index) in (slots.default?.()[0]?.children ?? [])"
       :key="index"
       class="swipe-item flex"
       @touchstart="startTouch($event, index as number)"
