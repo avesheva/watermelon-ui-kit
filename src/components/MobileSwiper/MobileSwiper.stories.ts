@@ -27,6 +27,17 @@ import type { Meta, StoryObj } from '@storybook/vue3-vite'
  *   </div>
  * </MobileSwiper>
  * ```
+ *
+ * There are three optional props:
+ *
+ * `shiftWidth: number` - available space after sliding the item left. By default, its 0.3 - 30% of width;
+ *
+ * `disableSwipe: boolean` - disable swiping, pretty obvious;
+ *
+ * `ignoreClass: boolean` - prevent swiped (opened) list item from closing, if user taped on element with this class;
+ *
+ *  Example: after list item swiping (opening) we see button with class "action-button". If we set
+ * `ignoreClass="action-button"`, this list item would remain opened after tapping on this button
  */
 
 const meta: Meta = {

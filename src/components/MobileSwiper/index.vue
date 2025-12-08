@@ -4,11 +4,13 @@ import { onMounted, onUnmounted, ref } from 'vue'
 export type MobileSwiperPropsType = {
   shiftWidth?: number,
   disableSwipe?: boolean,
+  ignoreClass?: string,
 }
 
 const props = withDefaults(defineProps<MobileSwiperPropsType>(), {
   shiftWidth: 0.3,
   disableSwipe: false,
+  ignoreClass: '',
 })
 
 const emit = defineEmits<{
@@ -30,7 +32,10 @@ const startTouch = (event: TouchEvent, index: number) => {
 
   if (!event.touches[0]) return
 
-  offsets.value = []
+  if (!(event.target as HTMLElement).classList.contains(props.ignoreClass)) {
+    offsets.value = []
+  }
+
   startX.value = event.touches[0].clientX
 
   timerId = setTimeout(() => {
@@ -62,8 +67,6 @@ const endTouch = (index: number) => {
 
   if ((offsets.value[index] || 0) < threshold) {
     offsets.value[index] = threshold
-  } else {
-    offsets.value[index] = 0
   }
 }
 
