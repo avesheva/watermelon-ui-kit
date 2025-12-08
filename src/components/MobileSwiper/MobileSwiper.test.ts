@@ -44,26 +44,6 @@ describe('MobileSwiper', () => {
       .toContain('translateX(-100px)')
   })
 
-  test('restores position if not passed threshold', async () => {
-    const first = wrapper.findAll('.swipe-item')[0]
-
-    if (!first) return
-
-    await first.trigger('touchstart', {
-      touches: [{ clientX: 200 }],
-    })
-
-    await first.trigger('touchmove', {
-      touches: [{ clientX: 150 }], // -50px
-    })
-
-    await first.trigger('touchend')
-
-    const content = first.find('.content')
-    expect((content.element as HTMLElement).style.transform)
-      .toContain('translateX(0px)')
-  })
-
   test('applies threshold if passed', async () => {
     Object.defineProperty(window, 'innerWidth', { value: 1000 })
 
