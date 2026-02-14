@@ -27,11 +27,11 @@ jobs:
       - name: Run tests
         run: npm run coverage
 
-      - name: Build and deploy Storybook
-        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
-        with:
-          path: storybook-static
-          checkout: false
+#      - name: Build and deploy Storybook
+#        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+#        with:
+#          path: storybook-static
+#          checkout: false
 
       - name: Setup Node
         uses: actions/setup-node@v4
