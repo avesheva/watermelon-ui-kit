@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { ref, defineComponent, h, useSlots } from 'vue'
-import { RouterLink, useRoute } from 'vue-router'
+import { ref, watch } from 'vue'
 
 type MenuItem = {
   label: string,
@@ -10,43 +9,28 @@ type MenuItem = {
 
 export type MobileButtonBarPropsType = {
   items: MenuItem[],
-  asLink?: boolean,
+  activeButton?: number,
 }
 
-const props = defineProps<MobileButtonBarPropsType>()
+const props = withDefaults(defineProps<MobileButtonBarPropsType>(), {
+  activeButton: 0,
+})
 
 const emit = defineEmits<{
   (e: 'change', value: any): void,
 }>()
 
-const route = useRoute()
 const widthPercentage = (100 / props.items.length).toFixed(2) + '%'
-const activeIndex = ref<number>(0)
-
-if (props.asLink) {
-  activeIndex.value = props.items.findIndex((item) => item.value === route.path)
-}
-
-const itemWrapper = defineComponent(
-  () => {
-    const slots = useSlots()
-
-    return () => {
-      return h(
-        props.asLink ? RouterLink : 'div',
-        undefined,
-        {
-          default: () => slots.default?.(),
-        },
-      )
-    }
-  },
-)
+const activeIndex = ref<number>(props.activeButton)
 
 const selectHandler = (i: number, value: any): void => {
   activeIndex.value = i
   emit('change', value)
 }
+
+watch(() => props.activeButton, (value) => {
+  activeIndex.value = value
+})
 </script>
 
 <template>
@@ -56,22 +40,18 @@ const selectHandler = (i: number, value: any): void => {
       :style="{ transform: `translateX(${ activeIndex * 100 }%)` }"
     />
 
-    <itemWrapper
+    <div
       v-for="(item, index) in items"
       :key="index"
-      :to="item.value"
       class="menu-item flex flex-col flex-1 items-center justify-center relative z-2 text-xs text-teal-700"
-      :class="{
-        active: !asLink && activeIndex === index,
-        'no-underline': asLink,
-      }"
+      :class="{ active: activeIndex === index }"
       @touchstart="selectHandler(index, item.value)"
     >
       <i class="icon block mb-1" :class="item.icon" />
       <span class="label block">
         {{ item.label }}
       </span>
-    </itemWrapper>
+    </div>
   </div>
 </template>
 
