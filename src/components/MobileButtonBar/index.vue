@@ -45,7 +45,7 @@ watch(() => props.activeButton, (value) => {
       :key="index"
       class="menu-item flex flex-col flex-1 items-center justify-center relative z-2 text-xs text-teal-700"
       :class="{ active: activeIndex === index }"
-      @touchstart="selectHandler(index, item.value)"
+      @pointerdown="selectHandler(index, item.value)"
     >
       <i class="icon block mb-1" :class="item.icon" />
       <span class="label block">
