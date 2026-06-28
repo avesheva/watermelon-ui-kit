@@ -30,7 +30,7 @@ if (props.small) {
     class="tag flex w-fit h-fit items-center font-rubik rounded-sm"
     :class="classes"
   >
-    <span v-if="isNew" class="mr-1 text-sm">{{ tag.name }}</span>
+    <span v-if="isNew" class="mr-1 md:text-sm">{{ tag.name }}</span>
     <router-link
       v-else
       :to="`/dashboard/tags/${ tag.name }`"
@@ -72,6 +72,8 @@ if (props.small) {
 
 <style scoped lang="scss">
 .tag {
+  // padding: 0.1rem 0.2rem;
+
   .rate {
     background: rgba(5,21,38, 0.3);
   }
@@ -82,6 +84,15 @@ if (props.small) {
 
     .rate {
       padding: 0.2rem;
+      font-size: 0.7rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.1rem 0.2rem;
+
+    .rate {
+      padding: 0.1rem 0.2rem;
       font-size: 0.7rem;
     }
   }
