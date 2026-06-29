@@ -93,6 +93,12 @@ if (props.small) {
       padding: 0.1rem 0.2rem;
       font-size: 0.7rem;
     }
+
+    &.small {
+      .rate {
+        font-size: 0.6rem;
+      }
+    }
   }
 }
 </style>
