@@ -43,7 +43,7 @@ if (props.small) {
     <span
       v-if="showRate && !isNew"
       class="rate rounded-xl font-medium"
-      :class="{ 'px-2 py-1 text-xs': !small }"
+      :class="{ 'md:px-2 md:py-1 md:text-xs': !small }"
     >
       {{ tag.rate }}
     </span>
@@ -72,8 +72,6 @@ if (props.small) {
 
 <style scoped lang="scss">
 .tag {
-  // padding: 0.1rem 0.2rem;
-
   .rate {
     background: rgba(5,21,38, 0.3);
   }
