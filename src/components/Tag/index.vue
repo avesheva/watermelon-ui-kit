@@ -21,7 +21,7 @@ let classes = isNew ? 'text-primary-green border border-solid' : 'bg-primary-gre
 if (props.small) {
   classes = classes + ' small'
 } else {
-  classes = classes + ' px-2 py-1'
+  classes = classes + ' md:px-2 md:py-1'
 }
 </script>
 
