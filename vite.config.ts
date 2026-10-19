@@ -10,7 +10,7 @@ export default defineConfig(() => ({
     dts({
       tsconfigPath: 'tsconfig.lib.json',
       insertTypesEntry: true,
-      outDir: 'dist',
+      outDirs: 'dist',
     }),
     tailwindcss(),
   ],

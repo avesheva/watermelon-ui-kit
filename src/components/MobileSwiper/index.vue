@@ -96,7 +96,7 @@ onUnmounted(() => {
     >
       <div
         class="content w-full min-w-full"
-        :style="{ transform: `translateX(${ offsets[index] || 0 }px)` }"
+        :style="{ transform: `translateX(${ offsets[index as number] || 0 }px)` }"
       >
         <component :is="child" />
       </div>

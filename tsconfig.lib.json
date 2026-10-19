@@ -1,6 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "rootDir": "./src",
     "outDir": "dist",
     "target": "ESNext",
     "module": "ESNext",
@@ -8,10 +9,10 @@
     "emitDeclarationOnly": true,
     "skipLibCheck": true,
     "allowImportingTsExtensions": true,
-    "moduleResolution": "Node",
-    "baseUrl": ".",
+    "moduleResolution": "Bundler",
+    // "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
+      "@/*": ["./src/*"],
     }
   },
   "include": ["src/components"],
