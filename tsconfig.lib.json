@@ -10,7 +10,6 @@
     "skipLibCheck": true,
     "allowImportingTsExtensions": true,
     "moduleResolution": "Bundler",
-    // "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
     }
